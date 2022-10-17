@@ -1,0 +1,71 @@
+
+body{
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+
+padding: 3%;
+}
+
+
+
+section{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(230, 255, 251, 0.705);
+    width: 40%;
+    height: auto;
+    border-radius: 5%;
+    text-shadow: 2px 2px 2px rgb(129, 206, 206);
+}
+
+input{
+    border-color: rgba(240, 248, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+input::placeholder{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.formato{
+margin-left: 20%;
+margin-right: 20%;
+border-bottom: 1px solid rgb(120, 126, 128);
+cursor: pointer;
+}
+
+.formato:hover{
+    color:white;
+}
+
+.formatodos{
+
+margin-left: 30%;
+margin-right: 30%;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .5s;
+    
+
+}
+
+.formatodos:hover{
+    background-color: rgba(43, 153, 226, 0.61);
+    box-shadow: 3px 3px 3px rgba(43, 153, 226, 0.61);
+    color: white;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 3px rgb(49, 90, 109);
+
+}
+
+.NotValid
+{
+    color: red;
+}

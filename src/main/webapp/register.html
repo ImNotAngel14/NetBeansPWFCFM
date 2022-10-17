@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--Version 0.2.1-->
+<head>
+    <link rel="icon" href="Img/gatitoo.png" type="icon_path">
+    <body background="Img/degradado2.png" style=background-size:cover>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <script src="https://kit.fontawesome.com/eae19df9c9.js" crossorigin="anonymous"></script>
+    <title>Registro</title>
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <section>
+        
+    <fieldset>
+        <form action="index.html" target="_self" method="post"  id="registerForm" >
+            <h1>Ingresa tus datos</h1>
+            <br>
+            <div class="formato3">
+            <input type="text" name="username" placeholder="Nombre de usuario" id="username" required>
+            <i class="fa-regular fa-user"></i>
+            </div>
+            <br>
+            <div class="formato4">
+                <label>Imagen de perfil</label>&nbsp;
+                <i class="fa-solid fa-camera-retro"></i>
+            </div>
+            <div class="formato4">
+            <input type="file">
+              </div>
+            <br>
+            <div class="formato3">
+            <input type="text" name="firstName" placeholder="Nombre" id="name" required>
+            <i class="fa-solid fa-signature"></i>
+            </div>
+            <div class="formato3">
+            <input type="text" name="lastName" placeholder="Apellido" id="lastName" required>
+            <i class="fa-solid fa-signature"></i>
+            </div>
+            <br>
+            <div class="formato3">
+            <input type="email" name="email" placeholder="Correo electrónico" id="email" required>
+            <i class="fa-regular fa-envelope"></i>
+            </div>
+            <br>
+            <div class="formato4">
+            <label>Fecha de nacimiento</label>&nbsp;
+            <i class="fa-regular fa-calendar"></i>
+        </div>
+        <div class="formato4">
+            <input type="date" id="birthdate" name="birthdate" value="2022-10-17" min="1900-01-01" max="2022-10-17">
+        </div>
+            <br>
+            <br>
+            <div class="formato3">
+            <input type="password" name="password" placeholder="Contraseña nueva" id="password" pattern="(?=.*[!#$%&'()*+,-./])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <i class="fa-solid fa-key"></i>
+            </div>
+
+            <div class="formato5" style="display: none;">
+            <p>La contraseña debe contener: </p>
+            <ul >
+                <li id="pLength" class="notValid">Al menos 8 caracteres</li>
+                <li id="pCap" class="notValid">Al menos una mayúscula</li>
+                <li id="pLower" class="notValid">Al menos una minúscula</li>
+                <li id="pNumber" class="notValid">Al menos un numero</li>
+                <li id="pSign" class="notValid">Al menos un signo de puntuación</li>
+            </ul>
+        </div>
+            <br>
+            <div class="formato3">
+                <input type="password" placeholder="Confirmar contraseña" id="confirmPassword" required>
+                </div>
+                <br>
+            <div class="formato6">
+            <input type="submit" value="Registrate">
+            </div>
+            <br>
+            <br>
+        </form>
+    </fieldset>
+</section>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="register.js"></script>
+</body>
+</html>
