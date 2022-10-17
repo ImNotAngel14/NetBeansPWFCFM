@@ -87,9 +87,6 @@ public class Register extends HttpServlet {
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
         String birthdate = request.getParameter("birthdate");
-        System.out.println("///////////////");
-        System.out.println(birthdate);
-        System.out.println("///////////////");
         User user = new User(username, password, firstName, lastName, email, birthdate);
         UserDAO userDao = new UserDAO();
         

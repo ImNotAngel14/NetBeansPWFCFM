@@ -2,6 +2,8 @@ var email = true;
 $(document).ready(function()
 {
     loadBirthdateInput();
+   $("#NotValidEmail").hide();
+   $("#NotValidPass").hide();
    $("#registerForm").submit(function(event)
     {
         event.preventDefault();
@@ -16,12 +18,12 @@ $(document).ready(function()
                 console.log(data);
             if(data.registered)
             {
-                alert("registrado correctamente");
+                alert("Registrado correctamente");
                 window.open('index.html', '_self');
             }
             else
             {
-                alert("no se pudo registrar");
+                alert("Ocurrió un error al registrar.");
             }
             }).fail(function()
             {
@@ -53,26 +55,34 @@ function loadBirthdateInput()
 /////////////////////////////////////////////////
 function isValidRegister()
 {
+    /*
     if(email === false)
     {
-        alert("El email no tiene un formato correcto");
+        $("#NotValidEmail").hide();
     }
+    else
+    {
+        $("#NotValidEmail").show();
+        return false;
+    }
+    */
     var pass1 = $("#password").val();
     var pass2 = $("#confirmPassword").val();
     if(pass1 !== pass2)
     {
-        alert("Las contraseñas no coinciden");
+        $("#NotValidPass").show();
         return false;
     }
     return true;
 }; 
 
 //Validacion email
+/*
 $("#email").blur(function()
 {
     let temp = $(this).val();
     temp = temp.toLowerCase();
-    var pattern = /[a-z0-9._-]+@[^ ]+\.[a-z0-9._-]{2,3}/;
+    var pattern = /[a-z0-9._-]+@[a-z0-9.-]+\.[a-z0-9._-]{2,}$/;
     if(temp.match(pattern))
     {
         email = true;
@@ -82,6 +92,7 @@ $("#email").blur(function()
         email = false;
     }
 });
+*/
 
 //Control de la validacion debajo del input de contraseña
 $("#password").keyup(function()
