@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -79,6 +80,7 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
+        HttpSession session;
         HashMap result = new HashMap();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -88,7 +90,9 @@ public class Login extends HttpServlet {
         
         if(resultUser != null)
         {
-            result.put("Response", true);
+            session = request.getSession();
+            session.setAttribute("username", resultUser.getUsername());
+            result.put("Response", resultUser);
         }
         else
         {

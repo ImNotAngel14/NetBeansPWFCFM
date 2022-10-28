@@ -14,7 +14,7 @@ import java.sql.DriverManager;
 public class DbConnection {
     private String hostname = "localhost";
     private String portNumber = "3306";
-    private String databaseName = "test";
+    private String databaseName = "gatito_blog";
     private String url = "jdbc:mysql://"+hostname+":"+portNumber+"/"+databaseName;
     private String username = "root";
     private String password = "root";
