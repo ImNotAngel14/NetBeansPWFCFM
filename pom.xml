@@ -40,8 +40,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
+>>>>>>> 50c2a082a9d17b4853ca2caf82aa5ab79b4d475f
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
