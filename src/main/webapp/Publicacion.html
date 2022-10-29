@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Img/gatitoo.png" type="icon_path">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="publi.css">
+    <title>Publicación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #c4d2db">
+    <header>
+        <div class="inner">
+            <div class="logo">
+                <div>
+                    <a href="home.html">
+                        <button class="Home">
+                        <img src="Img/GatitoBlog.png" alt="Logo">
+                    </button>
+                    </a>
+                </div>
+            </div>
+            <div class="logo">
+                <div id="BarraNav">
+                    <span >
+                        <input type="text" placeholder="Buscar...">
+                        <img src="Img/Lupa.png">
+                    </span>
+                </div>
+            </div>
+            <nav>
+                <li><span> Nombre Usuario </span></li>
+                <li><a href="perfil.html"><button class="Home"><img src="Img/FP.png" id="FPHeader" style="height:50px;width:50px"></button></a></li>
+                
+            </nav>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row" id="Contenido">
+            <div class="col-1">
+            </div>
+            <div class="col-6">
+
+                <div id="Publicaciones">
+                    
+                    <span id="Reaccion">
+                        <button class="reactB">
+                            <img src="Img/VotoUp.png" id="reactI" alt="">
+                        </button>
+                        
+                        <p>&nbsp;&nbsp;0</p>
+                        <button class="reactB">
+                            <img src="Img/VotoDown.png" id="reactI" alt="">
+                        </button>
+
+                    </span>
+                    <div class="Publi">
+                        <div class ="PubliData">
+                            <span class="UserP">NombreUsuario</span> <span class="FechaP">20/10/2022</span>
+                        </div>
+                        <div class="TituloP">
+                            <h4>Titulo Publicación</h4>
+                        </div>
+                        <div class="DescriP">
+                            <p>
+                                Contenido de la Publicación
+                            </p>
+                            <br>
+                            <img id="pngP" src="Img/pngP.png">
+                        </div>
+                        <br>
+                        <br>
+                        <div class="FuncP">
+                            <button class="Fbtn">
+                                <img src="Img/Coment.png" id="icono">
+                                0
+                            </button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <!--
+                            <button class="Fbtn">
+                                Spoiler
+                                <img src="Img/Ojo.png" id="icono">
+                            </button>
+                           -->
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button class="Fbtn">
+                                Editar
+                                <img src="Img/Edit.png" id="icono">
+                            </button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Eliminar
+                                <img src="Img/Elim.png" id="icono">
+                            </button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <!-- Button trigger modal -->
+
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Publicación</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                        ¿Seguro que desea borrar esta publicación?
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn-primary">Aceptar</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="Comentario">
+                            <br>
+                            <br>
+                            <p>Escribe tu comentario:</p>
+                            
+                            <input type="text" id="InputComent" placeholder="¿Qué estás pensando?...">
+                            <br>
+                            <br>
+                            <button id="BtnComent">Publicar</button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-1"></div>
+            <!--Placement general-->
+            <div class="col-3">
+                <!--Placement del Perfil-->
+                <div id="Perfil">
+                    <!--Placement del cada elemento-->
+                    <div id="ElemPer">
+                        
+                        <div id="Portada"></div>
+
+                            <img  id="FP" src="Img/FP.png" height="100px" width="100px">
+
+                        <div>
+                            <h2>Nombre Usuario</h2>
+                        </div>
+                    </div>
+                <div></div>
+                
+            </div>
+
+            </div>
+            <div class="col-1">
+            </div>
+
+        </div>
+</div>
+    <!-- -->
+    <!-- <img src="Img/Logo.png" alt="" > -->
+
+<footer>
+    <div>
+        <p>
+            Angel Emmanuel Barbosa Silos | Valeria Elisa Valadez Cerda
+        </p>
+    </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>

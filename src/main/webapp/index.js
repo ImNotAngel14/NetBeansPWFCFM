@@ -14,7 +14,7 @@ $(document).ready(function()
         if(data.Response)
         {
             $("#notValid").hide();
-            window.open('home.html', '_self');
+            window.open('perfil.html', '_self');
         }
         else
         {
