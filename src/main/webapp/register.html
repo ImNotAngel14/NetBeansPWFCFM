@@ -16,7 +16,10 @@
 </head>
 
 <body>
-
+        <div class="container">
+        <div class="d-flex justify-content-center">
+                <div class="col-xs-12 col-sm-3 col-md-5 ">
+                
     <section>
         
     <fieldset>
@@ -24,24 +27,24 @@
             <h1>Ingresa tus datos</h1>
             <br>
             <div class="formato3">
-            <input type="text" name="username" placeholder="Nombre de usuario" id="username" required>
+            <input type="text" name="username" placeholder="Nombre de usuario" id="username" required autocomplete="off">
             <i class="fa-regular fa-user"></i>
             </div>
             <br>
             <div class="formato4">
-                <label>Imagen de perfil</label>&nbsp;
+                <label for="file-input">Imagen de perfil</label>&nbsp;
                 <i class="fa-solid fa-camera-retro"></i>
             </div>
             <div class="formato4">
-            <input type="file">
+            <input type="file" id="file-input" hidden>
               </div>
             <br>
             <div class="formato3">
-            <input type="text" name="firstName" placeholder="Nombre" id="name" required>
+            <input type="text" name="firstName" placeholder="Nombre" id="name" required="true" autocomplete="off">
             <i class="fa-solid fa-signature"></i>
             </div>
             <div class="formato3">
-            <input type="text" name="lastName" placeholder="Apellido" id="lastName" required>
+            <input type="text" name="lastName" placeholder="Apellido" id="lastName" required autocomplete="off">
             <i class="fa-solid fa-signature"></i>
             </div>
             <br>
@@ -63,7 +66,7 @@
             <br>
             
             <div class="formato3">
-            <input type="password" name="password" placeholder="Contraseña nueva" id="password" pattern="(?=.*[!#$%&'()*+,-./])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <input type="password" name="password" placeholder="Contraseña nueva" id="password" pattern="(?=.*[!#$%&'()*+,-./])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required autocomplete="off">
             <i class="fa-solid fa-key"></i>
             </div>
 
@@ -82,7 +85,7 @@
             <label style="color: red" id="NotValidPass">Las contraseñas no coinciden</label>
             <br>
             <div class="formato3">
-                <input type="password" placeholder="Confirmar contraseña" id="confirmPassword" required>
+                <input type="password" placeholder="Confirmar contraseña" id="confirmPassword" required autocomplete="off">
                 </div>
                 <br>
             <div class="formato6">
@@ -93,6 +96,9 @@
         </form>
     </fieldset>
 </section>
+                    </div>
+             </div>
+             </div>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="register.js"></script>
 </body>

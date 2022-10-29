@@ -1,12 +1,5 @@
 
-body{
-    display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
 
-padding: 3%;
-}
 
 
 h1{
@@ -21,7 +14,6 @@ h1{
 section{
 background-color: rgba(232, 253, 250, 0.555);
 border-radius: 15px;
-width: 40%;
 }
 
 input{
