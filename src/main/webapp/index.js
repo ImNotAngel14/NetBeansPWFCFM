@@ -1,6 +1,7 @@
+$("#notValid").hide();
 $(document).ready(function()
 {
-    $("#notValid").hide();
+
     $("#loginForm").submit(function(event)
     {
         event.preventDefault();
@@ -25,8 +26,30 @@ $(document).ready(function()
             alert("Hubo un error al conectar al servidor. Revisa tu conexion a internet.");
         });
     });
+    
     $("#signUp").click(function()
     {
         window.open('register.html', '_self');
+    });
+    
+    $("#signIn").mouseover(function()
+    {
+        $(".fa-unlock-keyhole").toggleClass("formatotres");
+        //$("button i").toggleClass("formatotres");
+    });
+    
+    $("#signIn").mouseleave(function()
+    {
+        $(".fa-unlock-keyhole").toggleClass("formatotres");
+    });
+    
+    $("#signUp").mouseover(function()
+    {
+        $(".fa-user-plus").toggleClass("formatotres");
+    });
+    
+    $("#signUp").mouseleave(function()
+    {
+        $(".fa-user-plus").toggleClass("formatotres");
     });
 });
