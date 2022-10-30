@@ -42,7 +42,6 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
->>>>>>> 50c2a082a9d17b4853ca2caf82aa5ab79b4d475f
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
