@@ -21,8 +21,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author ImNotAngel
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
+@WebServlet(name = "CheckSession", urlPatterns = {"/CheckSession"})
+public class CheckSession extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,20 +36,17 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Login</title>");            
+            out.println("<title>Servlet CheckSession</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Login at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CheckSession at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-        } finally {
-            out.close();
         }
     }
 
@@ -65,7 +62,27 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+        HttpSession session = request.getSession();
+        
+        HashMap result = new HashMap();
+        UserDAO userDao = new UserDAO();
+        
+        if(session.getAttribute("idUser") != null)
+        {
+            int id = Integer.parseInt(session.getAttribute("idUser").toString());
+            User user = userDao.selectUserById(id);
+            result.put("user", user);
+            result.put("Response", true);
+        }
+        else
+        {            
+            result.put("Response", false);
+        }
+        String json = new Gson().toJson(result);
+        PrintWriter out = response.getWriter();
+        out.print(json);
+        out.flush();
     }
 
     /**
@@ -79,35 +96,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
-        HttpSession session;
-        HashMap result = new HashMap();
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        User user = new User(username, password);
-        UserDAO userDao = new UserDAO();
-        User resultUser = userDao.identify(user);
-        
-        if(resultUser != null)
-        {
-
-            session = request.getSession();
-            session.setAttribute("idUser", resultUser.getUserId());
-            System.out.println(session.getAttribute("idUser").toString());
-            
-            //result.put("User", resultUser);
-            result.put("Response", true);
-        }
-        else
-        {
-            result.put("Response", false);
-        }
-        
-        String json = new Gson().toJson(result);
-        
-        PrintWriter out = response.getWriter();
-        out.print(json);
-        out.flush();
+        processRequest(request, response);
     }
 
     /**

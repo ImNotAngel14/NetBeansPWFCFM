@@ -6,6 +6,7 @@ package DAO;
 
 import Configuration.DbConnection;
 import Model.User;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,12 +18,13 @@ public class UserDAO {
     DbConnection dbConnection = new DbConnection();
     private Connection connection;
     private PreparedStatement ps;
+    private CallableStatement cs;
     private ResultSet rs;
     User user = null;
     
     public User identify(User credentials)
     {
-        String sql = "SELECT * FROM gatito_blog.users WHERE username =? AND password =?";
+        String sql = "SELECT * FROM gatito_blog.users WHERE username =? AND pass =?";
         try
         {
             connection = dbConnection.getmysqlConnection();
@@ -35,7 +37,7 @@ public class UserDAO {
                 user = new User(
                         rs.getInt("id"),
                         rs.getString("username"),
-                        rs.getString("password"),
+                        rs.getString("pass"),
                         rs.getString("firstName"),
                         rs.getString("lastName"),
                         rs.getString("email"),
@@ -48,12 +50,42 @@ public class UserDAO {
         {
             System.out.println("error " + ex);
         }
+        finally{
+            //cerrarConexiones();
+        }
         return this.user;
+    }
+    
+    public User selectUserById(int id)
+    {
+        String store = "{CALL gatito_blog.selectUser(" + id + ")}";
+        try{
+            connection = dbConnection.getmysqlConnection();
+            cs = connection.prepareCall(store);
+            rs = cs.executeQuery();
+            if(rs.next())
+            {
+                user = new User(
+                        rs.getInt("id"),
+                        rs.getString("username"),
+                        rs.getString("pass"),
+                        rs.getString("firstName"),
+                        rs.getString("lastName"),
+                        rs.getString("email"),
+                        rs.getString("birthdate"),
+                        rs.getString("registerDate")
+                );
+            }
+        } catch(Exception ex)
+        {
+            System.out.println("error " + ex);
+        }
+        return user;
     }
     
     public boolean register(User newUser)
     {
-        String sql = "INSERT INTO gatito_blog.users (username, password, firstName, lastName, email, birthdate) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO gatito_blog.users (username, pass, firstName, lastName, email, birthdate) VALUES (?,?,?,?,?,?)";
         
         //INSERT INTO gatito_blog.users(username, password, firstName, lastName, email, birthdate) 
         //VALUES ('ImNot', 'HCLAFax8', 'Angel', 'Barbosa', 'barbosamane@hotmail.com', '2001-12-20');

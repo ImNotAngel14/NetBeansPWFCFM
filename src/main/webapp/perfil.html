@@ -30,7 +30,7 @@
                 </div>
             </div>
             <nav>
-                <li><span> Nombre Usuario </span></li>
+                <li><span id="navbarUsername"> Nombre Usuario </span></li>
                 <li><a href="perfil.html"><button class="Home"><img src="Img/FP.png" id="FPHeader" style="height:50px;width:50px"></button></a></li>
                 
             </nav>
@@ -55,7 +55,7 @@
 
                     </div>
                         <div>
-                            <h2>Nombre Usuario</h2>
+                            <h2 id="username">Nombre Usuario</h2>
                         </div>
                     </div>
                                                 <a href="Publicacion.html">
@@ -78,15 +78,15 @@
             <div class="datosP">
                 <br>
                 <br>
-                <span class="Desc">Nombre: &nbsp;</span> <span class="DatoU">Nombre ApellidoP ApellidoM</span> 
+                <span class="Desc">Nombre: &nbsp;</span> <span class="DatoU" id="fullname">Nombre ApellidoP ApellidoM</span> 
                 <button id="Edit"><img id = "icono" src="Img/Edit.png"></button>
                 <br>
                 <br>
-                <span class="Desc">Email:&nbsp;</span> <span class="DatoU">email@email.com</span> 
+                <span class="Desc">Email:&nbsp;</span> <span class="DatoU" id="email">email@email.com</span> 
                 <button id="Edit"><img id = "icono" src="Img/Edit.png"></button>
                 <br>
                 <br>
-                <span class="Desc">Edad:&nbsp;</span><span class="DatoU"> 00 Años</span>
+                <span class="Desc">Edad:&nbsp;</span><span class="DatoU" id="age"> 00 Años</span>
                 <button id="Edit"><img id = "icono" src="Img/Edit.png"></button>
             </div>
         </div>
@@ -94,12 +94,14 @@
         <div class="col-1"></div>
     </div>
 
-    <footer>
+    <footer class="fixed-bottom">
         <div>
             <p>
-                Angel Emmanuel Barbosa Silos | Valeria Elisa Valadez Cerda
+               Valeria Elisa Valadez Cerda | Angel Emmanuel Barbosa Silos
             </p>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="perfil.js"></script>
 </body>
 </html>

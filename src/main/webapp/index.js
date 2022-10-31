@@ -1,4 +1,28 @@
+
+
+$.ajax({
+    async: false,
+    type: "GET",
+    dataType: "json",
+    url: "CheckSession"
+}).done(function(data, textEstado, jqXHR){
+    console.log(data);
+    if(data.Response == true)
+    {
+        alert("Ya tiene una sesion");
+        window.location.href = "perfil.html";
+    }
+    else
+    {
+        alert("No hay sesion activa");
+    }
+}).fail(function(jqXHR, textStatus){
+    alert("la solicitud ha regresado un error: " + textStatus);
+    console.log(jqXHR);
+});
+
 $("#notValid").hide();
+
 $(document).ready(function()
 {
 
@@ -12,17 +36,18 @@ $(document).ready(function()
             url: "Login"
         }).done(function(data){
             console.log(data);
-        if(data.Response)
-        {
-            $("#notValid").hide();
-            window.open('perfil.html', '_self');
-        }
-        else
-        {
-            $("#notValid").show();
-        }
+            if(data.Response)
+            {
+                $("#notValid").hide();
+                window.open('perfil.html', '_self');
+            }
+            else
+            {
+                $("#notValid").show();
+            }
         }).fail(function()
         {
+            
             alert("Hubo un error al conectar al servidor. Revisa tu conexion a internet.");
         });
     });
