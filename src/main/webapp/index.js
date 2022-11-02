@@ -9,7 +9,7 @@ $.ajax({
     console.log(data);
     if(data.Response == true)
     {
-        alert("Ya tiene una sesion");
+        //alert("Ya tiene una sesion");
         window.location.href = "perfil.html";
     }
     else

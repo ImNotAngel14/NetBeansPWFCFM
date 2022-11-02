@@ -10,10 +10,13 @@ $(document).ready(function()
         if(isValidRegister())
         {
             $.ajax({
-                data:$(this).serialize(),
+                data: new FormData(this),
                 type:"POST",
                 dataType: "json",
-                url: "Register"
+                url: "Register",
+                cache: false,
+                contentType: false,
+                processData: false
             }).done(function(data){
                 console.log(data);
             if(data.registered)
@@ -38,14 +41,25 @@ function getToday()
     let temp = new Date();
     let year = temp.getFullYear().toString();
     let tMonth = temp.getMonth()+1;
-    let month = tMonth.toString();
+    if(tMonth < 10)
+    {
+        tMonth = "0" + tMonth;
+    }
+    //let month = tMonth.toString();
     let day = temp.getDate();
-    var today = year+"-"+month+"-"+day;
+    console.log("prechange = " + day);
+    if(day < 10)
+    {
+        day = "0" + day;
+        console.log("after: " + day);
+    }
+    var today = year+"-"+tMonth+"-"+day;
     return today;
 }
 
 function loadBirthdateInput()
 {
+    console.log("loadBirthdate");
     let today = getToday();
     document.getElementById("birthdate").setAttribute("value", today);
     document.getElementById("birthdate").setAttribute("max", today);

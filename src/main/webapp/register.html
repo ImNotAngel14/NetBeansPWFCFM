@@ -23,7 +23,7 @@
     <section>
         
     <fieldset>
-        <form action="index.html" target="_self" method="post"  id="registerForm" >
+        <form action="index.html" target="_self" method="post"  id="registerForm" enctype="multipart/form-data" >
             <h1>Ingresa tus datos</h1>
             <br>
             <div class="formato3">
@@ -36,7 +36,7 @@
                 <i class="fa-solid fa-camera-retro"></i>
             </div>
             <div class="formato4">
-            <input type="file" id="file-input" hidden>
+            <input type="file" id="file-input" name="archivo" required>
               </div>
             <br>
             <div class="formato3">

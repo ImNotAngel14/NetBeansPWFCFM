@@ -7,8 +7,11 @@ package Controller;
 import DAO.UserDAO;
 import Model.User;
 import com.google.gson.Gson;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.Base64;
 import java.util.HashMap;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -73,7 +76,9 @@ public class CheckSession extends HttpServlet {
             int id = Integer.parseInt(session.getAttribute("idUser").toString());
             User user = userDao.selectUserById(id);
             result.put("user", user);
+            
             result.put("Response", true);
+            result.put("photo", base64(user.getPhoto()));
         }
         else
         {            
@@ -108,5 +113,22 @@ public class CheckSession extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+    
+    public static byte[] toByteArray(InputStream in) throws IOException
+    {
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        int len;
+        while((len = in.read(buffer)) != -1){
+            os.write(buffer, 0, len);
+        }
+        return os.toByteArray();
+    }
+    
+    public String base64(InputStream file) throws IOException
+    {
+        byte[] bytes = toByteArray(file);
+        String imageStr = Base64.getEncoder().encodeToString(bytes);
+        return imageStr;
+    }
 }

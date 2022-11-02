@@ -4,6 +4,8 @@
  */
 package Model;
 
+import java.io.InputStream;
+
 /**
  *
  * @author ImNotAngel
@@ -17,9 +19,10 @@ public class User {
     private String email;
     private String birthdate;
     private String registerDate;
+    private InputStream photo;
     
     //Obtain user
-    public User(int userId, String username, String password, String firstName, String lastName, String email, String birthdate, String registerDate)
+    public User(int userId, String username, String password, String firstName, String lastName, String email, String birthdate, String registerDate, InputStream photo)
     {
         this.userId = userId;
         this.username = username;
@@ -29,9 +32,14 @@ public class User {
         this.email = email;
         this.birthdate = birthdate;
         this.registerDate = registerDate;
+        if(photo != null)
+        {
+            System.out.println("!= null");
+        }
+        this.photo = photo;
     }
     //Register user
-    public User(String username, String password, String firstName, String lastName, String email, String birthdate)
+    public User(String username, String password, String firstName, String lastName, String email, String birthdate, InputStream photo)
     {
         this.username = username;
         this.password = password;
@@ -39,6 +47,7 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.birthdate = birthdate;
+        this.photo = photo;
     }
     //Check credentials
     public User(String username, String password)
@@ -79,5 +88,8 @@ public class User {
         return registerDate;
     }
     
-    
+    public InputStream getPhoto()
+    {
+        return photo;
+    }
 }

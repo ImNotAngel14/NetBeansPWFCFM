@@ -11,6 +11,8 @@ $.ajax({
     console.log(data);
     if(data.Response == true)
     {
+        var formato = "data:image/png;base64,";
+        document.getElementById('FP').src = formato + data.photo;
         document.getElementById("navbarUsername").innerHTML = data.user.username;
         document.getElementById('username').innerHTML = data.user.username;
         document.getElementById('email').innerHTML = data.user.email;
@@ -19,7 +21,7 @@ $.ajax({
     }
     else
     {
-        alert("No hay sesion activa");
+        //alert("No hay sesion activa");
         window.location.href = "index.html";
     }
 }).fail(function(jqXHR, textEstado){

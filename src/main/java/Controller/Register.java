@@ -7,22 +7,28 @@ package Controller;
 import DAO.UserDAO;
 import Model.User;
 import com.google.gson.Gson;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
+
+//@MultipartConfig
 /**
  *
  * @author ImNotAngel
  */
 @WebServlet(name = "Register", urlPatterns = {"/Register"})
+@MultipartConfig(maxFileSize = 16177216)
 public class Register extends HttpServlet {
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -75,23 +81,40 @@ public class Register extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
         HashMap result = new HashMap();
+        String uploadPath = getServletContext().getRealPath("/profileImg/");
+        
+        File fdir = new File(uploadPath);
+        if(!fdir.exists())
+        {
+            fdir.mkdir();
+        }
         //Obtener parametros
+        try{
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
         String birthdate = request.getParameter("birthdate");
-        User user = new User(username, password, firstName, lastName, email, birthdate);
+        Part filePart = request.getPart("archivo");
+        InputStream photo = null;
+        photo = filePart.getInputStream();
+        User user = new User(username, password, firstName, lastName, email, birthdate, photo);
         UserDAO userDao = new UserDAO();
         
         result.put("registered", userDao.register(user));
-        
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error:" + ex);
+            result.put("response", "falle");
+        }
         String json = new Gson().toJson(result);
         
         PrintWriter out = response.getWriter();
