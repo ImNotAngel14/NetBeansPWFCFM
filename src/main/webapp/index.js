@@ -12,10 +12,6 @@ $.ajax({
         //alert("Ya tiene una sesion");
         window.location.href = "perfil.html";
     }
-    else
-    {
-        alert("No hay sesion activa");
-    }
 }).fail(function(jqXHR, textStatus){
     alert("la solicitud ha regresado un error: " + textStatus);
     console.log(jqXHR);

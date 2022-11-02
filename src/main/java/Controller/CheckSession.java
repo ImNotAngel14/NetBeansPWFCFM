@@ -67,10 +67,8 @@ public class CheckSession extends HttpServlet {
             throws ServletException, IOException {
         //processRequest(request, response);
         HttpSession session = request.getSession();
-        
         HashMap result = new HashMap();
         UserDAO userDao = new UserDAO();
-        
         if(session.getAttribute("idUser") != null)
         {
             int id = Integer.parseInt(session.getAttribute("idUser").toString());

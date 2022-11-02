@@ -93,7 +93,6 @@ public class Login extends HttpServlet {
 
             session = request.getSession();
             session.setAttribute("idUser", resultUser.getUserId());
-            System.out.println(session.getAttribute("idUser").toString());
             
             //result.put("User", resultUser);
             result.put("Response", true);

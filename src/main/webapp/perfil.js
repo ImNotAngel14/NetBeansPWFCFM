@@ -13,6 +13,7 @@ $.ajax({
     {
         var formato = "data:image/png;base64,";
         document.getElementById('FP').src = formato + data.photo;
+        document.getElementById('FPHeader').src = formato + data.photo;
         document.getElementById("navbarUsername").innerHTML = data.user.username;
         document.getElementById('username').innerHTML = data.user.username;
         document.getElementById('email').innerHTML = data.user.email;
@@ -26,6 +27,7 @@ $.ajax({
     }
 }).fail(function(jqXHR, textEstado){
     alert("la solicitud ha regresado un error: " + textEstado);
+    window.location.href = "index.html";
 });
 
 

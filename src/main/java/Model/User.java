@@ -32,10 +32,6 @@ public class User {
         this.email = email;
         this.birthdate = birthdate;
         this.registerDate = registerDate;
-        if(photo != null)
-        {
-            System.out.println("!= null");
-        }
         this.photo = photo;
     }
     //Register user
