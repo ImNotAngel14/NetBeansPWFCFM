@@ -4,8 +4,7 @@
  */
 package Controller;
 
-import DAO.UserDAO;
-import Model.User;
+import DAO.PostDAO;
 import com.google.gson.Gson;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -24,8 +23,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author ImNotAngel
  */
-@WebServlet(name = "CheckSession", urlPatterns = {"/CheckSession"})
-public class CheckSession extends HttpServlet {
+@WebServlet(name = "GetUserPosts", urlPatterns = {"/GetUserPosts"})
+public class GetUserPosts extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,10 +43,10 @@ public class CheckSession extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CheckSession</title>");            
+            out.println("<title>Servlet GetUserPosts</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CheckSession at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet GetUserPosts at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -68,25 +67,18 @@ public class CheckSession extends HttpServlet {
         //processRequest(request, response);
         HttpSession session = request.getSession();
         HashMap result = new HashMap();
-        UserDAO userDao = new UserDAO();
+        PostDAO postDao = new PostDAO();
         if(session.getAttribute("idUser") != null)
         {
-            int id = Integer.parseInt(session.getAttribute("idUser").toString());
-            User user = userDao.selectUserById(id);
-            result.put("user", user);
-            
-            result.put("Response", true);
-            result.put("photo", base64(user.getPhoto()));
-            //result.put("username", user.getUsername());
-        }
-        else
-        {            
-            result.put("Response", false);
+            //Obtenemos el atributo idUser del session.
+            //Pasamos el idUser convirtiendolo a String para poder convertirlo a integer.
+            result.put("posts", postDao.getPostsByUser(Integer.parseInt(session.getAttribute("idUser").toString())));
         }
         String json = new Gson().toJson(result);
         PrintWriter out = response.getWriter();
         out.print(json);
         out.flush();
+        
     }
 
     /**

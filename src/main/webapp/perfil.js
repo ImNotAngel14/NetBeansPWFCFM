@@ -11,7 +11,7 @@ $.ajax({
     console.log(data);
     if(data.Response == true)
     {
-        var formato = "data:image/png;base64,";
+        const formato = "data:image/png;base64,";
         document.getElementById('FP').src = formato + data.photo;
         document.getElementById('FPHeader').src = formato + data.photo;
         document.getElementById("navbarUsername").innerHTML = data.user.username;

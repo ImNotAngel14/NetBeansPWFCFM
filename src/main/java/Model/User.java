@@ -4,7 +4,10 @@
  */
 package Model;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.Base64;
 
 /**
  *
@@ -20,6 +23,7 @@ public class User {
     private String birthdate;
     private String registerDate;
     private InputStream photo;
+    private String base64Photo;
     
     //Obtain user
     public User(int userId, String username, String password, String firstName, String lastName, String email, String birthdate, String registerDate, InputStream photo)
@@ -50,6 +54,12 @@ public class User {
     {
         this.username = username;
         this.password = password;
+    }
+    
+    public User(String username, InputStream photo)
+    {
+        this.username = username;
+        this.photo = photo;
     }
 
     public int getUserId() {
@@ -87,5 +97,23 @@ public class User {
     public InputStream getPhoto()
     {
         return photo;
+    }
+    
+    public static byte[] toByteArray(InputStream in) throws IOException
+    {
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        int len;
+        while((len = in.read(buffer)) != -1){
+            os.write(buffer, 0, len);
+        }
+        return os.toByteArray();
+    }
+    
+    public String base64(InputStream file) throws IOException
+    {
+        byte[] bytes = toByteArray(file);
+        String imageStr = Base64.getEncoder().encodeToString(bytes);
+        return imageStr;
     }
 }
