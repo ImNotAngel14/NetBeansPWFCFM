@@ -27,7 +27,7 @@ $.ajax({
     }
 }).fail(function(jqXHR, textEstado){
     alert("la solicitud ha regresado un error: " + textEstado);
-    window.location.href = "index.html";
+    //window.location.href = "index.html";
 });
 
 

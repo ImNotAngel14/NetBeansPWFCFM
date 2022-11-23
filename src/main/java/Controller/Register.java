@@ -96,19 +96,28 @@ public class Register extends HttpServlet {
         }
         //Obtener parametros
         try{
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String email = request.getParameter("email");
-        String birthdate = request.getParameter("birthdate");
-        Part filePart = request.getPart("archivo");
-        InputStream photo = null;
-        photo = filePart.getInputStream();
-        User user = new User(username, password, firstName, lastName, email, birthdate, photo);
-        UserDAO userDao = new UserDAO();
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String email = request.getParameter("email");
+            String birthdate = request.getParameter("birthdate");
+            Part filePart = request.getPart("archivo");
+            if(filePart == null)
+            {
+                result.put("response", "No hay imagen");
+                return;
+            }
+            else
+            {
+                InputStream photo = null;
+                photo = filePart.getInputStream();
+                User user = new User(username, password, firstName, lastName, email, birthdate, photo);
+                UserDAO userDao = new UserDAO();
+
+                result.put("registered", userDao.register(user));
+            }
         
-        result.put("registered", userDao.register(user));
         }
         catch(Exception ex)
         {
