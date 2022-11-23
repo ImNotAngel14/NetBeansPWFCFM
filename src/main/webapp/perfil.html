@@ -38,7 +38,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" id="InputBuscar">
         
-        <button class="btn btn-outline-success" type="submit">Ir</button>
+        <button class="btn btn-outline-success" type="submit" >Ir</button>
       </form>
     </div>
     
@@ -113,31 +113,47 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                   <img id = "icono" src="Img/Edit.png">
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Editar Foto</a></li>
-                  <li><a class="dropdown-item" href="#">Editar Nombre</a></li>
-                  <li><a class="dropdown-item" href="#">Editar Fecha Nacimiento</a></li>
-                  <li><a class="dropdown-item" href="#">Editar e-mail</a></li>
-                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#EditPswModal" id="EditPsw">Editar Contraseña</a></li>
+                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#EditInfo" id="EditDrop">Editar Datos</a></li>
                 </ul>
                 </div>
                 <br>
                 </div>
             </div>
                 <!-- MODAL PSWRD -->
-                <div class="modal fade" id="EditPswModal" tabindex="-1" aria-labelledby="EditPsw" aria-hidden="true">
+                <div class="modal fade" id="EditInfo" tabindex="-1" aria-labelledby="EditPsw" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Contraseña</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Datos</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <input type="password" name="password" placeholder="Contraseña nueva" id="password" pattern="(?=.*[!#$%&'()*+,-./])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required autocomplete="off">
-                                <input type="password" placeholder="Confirmar contraseña" id="confirmPassword" required autocomplete="off">
+                                
+                                <div>
+                                <label>Subir imagen de perfil:</label> &nbsp;
+                                <label class="custom-file-upload" for="file-input">
+                                <i class="fa-solid fa-camera-retro"></i>
+                                </label>
+                                <input type="file" id="file-input" name="archivo" required>
+                                </div>
+                                <br>
+                                <input type="text" name="firstName" placeholder="Nombre" id="name">
+                                <br>
+                                <input type="text" name="lastName" placeholder="Apellido" id="lastName" required autocomplete="off">
+                                <br><!-- comment -->
+                                <label>Fecha de nacimiento</label>&nbsp;
+                                <input type="date" id="birthdate" name="birthdate" value="2022-10-17" min="1900-01-01" max="2022-10-17">
+                                <br>
+                                <input type="email" name="email" placeholder="Correo electrónico" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                                <br>
+                                <input type="text" name="password" placeholder="Contraseña nueva" id="password" pattern="(?=.*[!#$%&'()*+,-./])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required autocomplete="off">
+                                
+                               
+                                
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="Cancel" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" class="Okay">Aceptar</button>
+                                <button type="button" class="Okay" onclick="editData()" data-bs-dismiss="modal" >Guardar Cambios</button>
                             </div>
                         </div>
                     </div>

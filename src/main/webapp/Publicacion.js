@@ -4,7 +4,6 @@
  */
 
 document.getElementById("EditText").value = document.getElementById("TextPubli").innerHTML;
-document.getElementById("EditTitle").value = document.getElementById("TituloPubli").innerHTML;
 
 $.ajax({
     async: false,
@@ -44,6 +43,5 @@ function showComents(){
 function editPubli(){ 
         //numCaracteres = document.formul.textito.value.length 
         //	document.formul.numCaracteres.value = numCaracteres//
-        document.getElementById("TituloPubli").innerHTML = document.getElementById("EditTitle").value ;
         document.getElementById("TextPubli").innerHTML = document.getElementById("EditText").value;
         } 
