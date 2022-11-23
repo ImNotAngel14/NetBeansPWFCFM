@@ -19,6 +19,13 @@ $.ajax({
         document.getElementById('email').innerHTML = data.user.email;
         document.getElementById('fullname').innerHTML = data.user.firstName + " " + data.user.lastName;
         document.getElementById('age').innerHTML = calculateAge(data.user.birthdate);
+        
+        document.getElementById("name").value = data.user.firstName;
+        document.getElementById("lastName").value = data.user.lastName;
+        document.getElementById("birthdate").value = data.user.birthdate;
+        document.getElementById("email").value = data.user.email;
+        document.getElementById("password").value = data.user.password;
+        
     }
     else
     {
@@ -58,4 +65,8 @@ function calculateAge(bdate)
     return age;
 }
 
-
+//function editData(data){ 
+ //       console.log(data);
+   //     document.getElementById("name").innerHTML = data.user.fisrtName;
+     //   } 
+     // nosequehago

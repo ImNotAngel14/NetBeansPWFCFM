@@ -1,4 +1,11 @@
-
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 23/11/2022, 06:59:57 AM
+    Author     : valer
+*/
 
 header{
     width: 100vw;
@@ -55,8 +62,8 @@ header{
 }
 
 /* 
-HEADER^
 */
+
 #ContenidoA{
     padding-top: 100px;
     text-align: center;
@@ -70,6 +77,13 @@ HEADER^
     border-radius: 5px;
     background-color:#e7e1fd;
     padding: 10px 14px;
+}
+
+#Filtros{
+    padding: 10px 14px;
+    border-radius: 5px;
+
+    background-color: #e7e1fd;
 }
 
 #Publicaciones{
@@ -205,6 +219,8 @@ padding-right: 40px;
     padding-top: 20px;
 }
 
+/* 
+*/
 footer{
     
     height: 150px;
