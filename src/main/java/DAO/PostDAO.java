@@ -68,6 +68,57 @@ public class PostDAO {
         return list;
     }
     
+    public boolean insertPost(Post newPost)
+    {
+        
+        
+        //INSERT INTO gatito_blog.posts(userId, title, postText, postImage, isSpoiler) VALUES(?, ?, ?, ?, ?, ?);
+        try
+        {
+//            boolean hasImage = false;
+//            boolean hasText = false;
+//            String sql = "INSERT INTO gatito_blog.users(userId, ";
+//            String text = newPost.getPostText();
+//            InputStream image = newPost.getPostImage();
+//            if(text.length() >  0)
+//            {
+//                hasText = true;
+//                sql+="postText, ";
+//            }
+//            if(image != null)
+//            {
+//                hasImage = true;
+//                sql+="postImage, ";
+//            }
+//            if(hasText)
+//            {
+//                
+//            }
+//            sql += "isSpoiler) VALUES(?,?";
+            String sql = "INSERT INTO gatito_blog.posts(userId, postText, postImage, isSpoiler) VALUES(?, ?, ?, ?);";
+            connection = dbConnection.getmysqlConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, newPost.getUserId());
+            ps.setString(2, newPost.getPostText());
+            ps.setBlob(3, newPost.getPostImage());
+            ps.setBoolean(4, newPost.isSpoiler());
+            int result = ps.executeUpdate();
+            if(result > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error " + ex);
+            return false;
+        }
+    }
+    
     private void closeConnection() {
         try {
             if (rs != null && rs.isClosed() == false) {

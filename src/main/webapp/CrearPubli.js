@@ -30,6 +30,33 @@ $(document).ready(function()
     {
         window.location.href = "perfil.html";
     });
+   $("#PublicacionForm").submit(function(event)
+    {
+        event.preventDefault();
+        $.ajax({
+            data: new FormData(this),
+            type:"POST",
+            dataType: "json",
+            url: "NewPost",
+            cache: false,
+            contentType: false,
+            processData: false
+        }).done(function(data){
+            console.log(data);
+        if(data.posted)
+        {
+            window.open('home.html', '_self');
+            //window.open('index.html', '_self');
+        }
+        else
+        {
+            alert("Ocurrió un error al registrar.");
+        }
+        }).fail(function()
+        {
+            alert("Hubo un error al conectar al servidor. Revisa tu conexion a internet.");
+        });
+    });
 });
 
 

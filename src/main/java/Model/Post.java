@@ -58,7 +58,7 @@ public class Post {
         //this.base64postImage = base64(postImage);
     }
     
-    //Get post
+    //Get post REAL
     public Post(int postId, int userId, String title, String postText, String postImage, boolean spoiler, Timestamp uploadDate, String username, String userPhoto)
     {
         this.postId = postId;
@@ -74,10 +74,10 @@ public class Post {
     }
     
     //Add post
-    public Post(int userId, String title, String postText, InputStream postImage, boolean spoiler)
+    public Post(int userId, String postText, InputStream postImage, boolean spoiler)
     {
         this.userId = userId;
-        this.title = title;
+        //this.title = title;
         this.postText = postText;
         this.postImage = postImage;
         this.spoiler = spoiler;
