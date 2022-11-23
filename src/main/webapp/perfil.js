@@ -14,7 +14,7 @@ $.ajax({
         const formato = "data:image/png;base64,";
         document.getElementById('FP').src = formato + data.photo;
         document.getElementById('FPHeader').src = formato + data.photo;
-        document.getElementById("navbarUsername").innerHTML = data.user.username;
+        document.getElementById("UserName").innerHTML = data.user.username;
         document.getElementById('username').innerHTML = data.user.username;
         document.getElementById('email').innerHTML = data.user.email;
         document.getElementById('fullname').innerHTML = data.user.firstName + " " + data.user.lastName;
@@ -27,7 +27,7 @@ $.ajax({
     }
 }).fail(function(jqXHR, textEstado){
     alert("la solicitud ha regresado un error: " + textEstado);
-    window.location.href = "index.html";
+    //window.location.href = "index.html";
 });
 
 
