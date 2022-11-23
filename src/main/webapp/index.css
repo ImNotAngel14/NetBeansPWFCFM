@@ -1,8 +1,17 @@
 
+body { 
+  background: radial-gradient(circle at 100% 0%, #73fee9 0, #69e8de 16.67%, #62cecd 33.33%, #5db2b6 50%, #59969d 66.67%, #557f87 83.33%, #516b72 100%) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
+.row{
+    padding-top: 30px;
+}
 
-
-section{
+.section{
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -10,6 +19,7 @@ section{
     height: auto;
     border-radius: 5%;
     text-shadow: 2px 2px 2px rgb(129, 206, 206);
+    padding: 30px;
 }
 
 input{
@@ -22,8 +32,8 @@ input::placeholder{
 }
 
 .formato{
-margin-left: 20%;
-margin-right: 20%;
+margin-left: 10%;
+margin-right: 10%;
 border-bottom: 1px solid rgb(120, 126, 128);
 cursor: pointer;
 }
@@ -58,4 +68,31 @@ h1{
     color: rgb(255, 255, 255);
     text-shadow: 3px 3px 3px rgb(49, 90, 109);
 
+}
+
+footer{
+    
+    height: 150px;
+
+    display: flex;
+    place-content: center;
+
+    align-items:flex-end;
+    color:#63616ba8;
+    padding-bottom: 20px;
+    
+}
+
+
+
+@media(max-width: 425px){
+#foot1{
+    display: none;
+}
+}
+
+@media(min-width: 426px){
+#foot2{
+    display: none;
+}
 }

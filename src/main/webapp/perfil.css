@@ -1,11 +1,11 @@
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-}
-
-/*header*/
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 11/11/2022, 11:51:28 PM
+    Author     : valer
+*/
 header{
     width: 100vw;
     height: 80px;
@@ -15,92 +15,52 @@ header{
     z-index: 3;
 }
 
-header .inner{
-    width: 1300px; /* This is the inner width of the content inside of your header (80%, etc) */
-    height: 100%;
-    display: block;
-    margin: 0 auto;
-}
-
-header .logo{
-    display: table;
-    height: 100%;
-    float: left;
-}
-
-header .logo div{
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-header .logo img{
-    height: 50px;
-    margin-top: 5px; /* Optical alignment of the logo */
-}
-
-#BarraNav{
-    display: flex;
-    padding-top: 25px;
-    padding-left: 350px;
-    padding-bottom: 25px;;
-    vertical-align: middle;
-
-}
-#BarraNav img{
+#DataUser1 button{
+    border:none;
     background-color: transparent;
-    width: 30px;
-    height: 30px;
-}
-#BarraNav input{
-    width: 300px;
-    height: 30px;
-    Border:none;
-    background-color:transparent
-}
-#BarraNav span{
-    background-color: #8bbcdb6e;
-    border-radius: 15px;
-    padding: 5px;
 }
 
-button.Home{
-    border: none;
-    filter: brightness(1.08)
+#UserName{
+    font-weight: bolder;
 }
 
-button.Home:hover{
-    filter: brightness(1.0);
+#LogoM button {
+    border:none;
+    background-color: transparent;
+}
+            @media (max-width: 380px){
+        #LogoM{
+            display: none;
+            }
+        }
+
+#LogoS {
+    display:flex;
 }
 
-header nav{
-    float: right;
-    height: 100%;
+#LogoS button {
+    display:flex;
+    border:none;
+    background-color: transparent;
+}
+    
+        @media (min-width: 381px){
+        #LogoS{
+            display: none;
+            }
+        }
+
+        #InputBuscar{
+            width: 100%;
+        }
+        
+
+#Columna{
+    flex-direction: column;
+    position: absolute;
 }
 
-header nav li{
-    display: table;
-    height: 100%;
-    float: left;
-    margin-right: 30px;
-}
-header nav span {
-    font-weight: bold;
-    display: table-cell;
-    vertical-align: middle;
-}
 
-header nav li:last-of-type{
-    margin-right: 0;
-}
-header #FPHeader{
-    padding-top: 10px;
-    padding-right: 10px;
-    border-radius: 10%;
-    display: table-cell;
-    vertical-align: middle;
-}
-/**/
 /*izq*/
 #Contenido{
     padding-top: 100px;
@@ -111,6 +71,14 @@ header #FPHeader{
     border-radius: 5px;
     height: 350px;
     background-color: #afc4f0;
+    text-align: center;
+}
+
+@media(max-width: 767px){
+#Perfil{
+    height: 250px;
+    text-align: center;
+}
 }
 
 #ImgUpload > input{
@@ -121,23 +89,25 @@ header #FPHeader{
 #FP{
     border:none;
     border-radius: 20px;
-    position: relative;
-    bottom: 80px;
-    left: 15px;
-    z-index: 2;
-    border-color: white;
     cursor: pointer;
+    width: 100px;
+    height: 100px;
+    
 }
 
-#Portada{
+@media(min-width: 767px){
+#FP{
+    width: 120px;
     height: 120px;
-    background-color: #ebd6f8d8;
+}
 }
 
 .PubRec{
     border:none;
-    color:black;
-    background-color: #ebd6f8d8;
+    color:white;
+    text-shadow:1px 1px 1px rgb(134, 160, 190);
+    background-color: rgba(75, 134, 236, 0.35);
+    border-radius: 5px;
 }
 
 .PubRec:hover{
@@ -153,6 +123,8 @@ header #FPHeader{
 }
 /*der*/
 
+
+
 #Grpo{
     padding: 10px 14px;
     border-radius: 5px;
@@ -161,14 +133,20 @@ header #FPHeader{
 }
 
 .InfoUser{
-    color:white;
-    text-shadow: 3px 3px 3px rgb(134, 160, 190);
+    height: 50px;
     border-bottom: 1px solid rgba(119, 136, 153, 0.479);
 }
+
+H2{
+    color:white;
+    text-shadow: 3px 3px 3px rgb(134, 160, 190);
+}
+
+
 .Desc{
     font-size: 20px;
     font-weight: bold;
-    padding-left: 20px;
+
 }
 .DatoU{
     font-size: 18px;
@@ -190,8 +168,8 @@ cursor: pointer;
     }
 
 footer{
-
-    height: 200px;
+    
+    height: 150px;
 
     display: flex;
     place-content: center;
@@ -200,4 +178,16 @@ footer{
     color:#63616ba8;
     padding-bottom: 20px;
     
+}
+
+@media(max-width: 425px){
+#foot1{
+    display: none;
+}
+}
+
+@media(min-width: 426px){
+#foot2{
+    display: none;
+}
 }

@@ -2,10 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
-
-document.getElementById("EditText").value = document.getElementById("TextPubli").innerHTML;
-document.getElementById("EditTitle").value = document.getElementById("TituloPubli").innerHTML;
-
 $.ajax({
     async: false,
     type: "GET",
@@ -18,7 +14,6 @@ $.ajax({
         const formato = "data:image/png;base64,";
         document.getElementById('FPHeader').src = formato + data.photo;
         document.getElementById('UserName').innerHTML = data.user.username;
-        document.getElementById('UserPubli').innerHTML = data.user.username;
     }
     else
     {
@@ -37,13 +32,4 @@ $(document).ready(function()
     });
 });
 
-function showComents(){ 
-    $(".Comentario").show();
-                } 
 
-function editPubli(){ 
-        //numCaracteres = document.formul.textito.value.length 
-        //	document.formul.numCaracteres.value = numCaracteres//
-        document.getElementById("TituloPubli").innerHTML = document.getElementById("EditTitle").value ;
-        document.getElementById("TextPubli").innerHTML = document.getElementById("EditText").value;
-        } 

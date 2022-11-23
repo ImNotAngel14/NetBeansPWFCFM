@@ -2,8 +2,7 @@
 <html lang="es">
 <!--Version 0.2.1-->
 <head>
-    <link rel="icon" href="Img/gatitoo.png" type="icon_path">
-    <body background="Img/degradado2.png" style=background-size:cover>
+    <link rel="icon" href="Img/gatitoo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,90 +15,103 @@
 </head>
 
 <body>
-        <div class="container">
-        <div class="d-flex justify-content-center">
-                <div class="col-xs-12 col-sm-3 col-md-5 ">
-                
-    <section>
-        
-    <fieldset>
-        <form action="index.html" target="_self" method="post"  id="registerForm" enctype="multipart/form-data" >
-            <h1>Ingresa tus datos</h1>
-            <br>
-            <div class="formato3">
-            <input type="text" name="username" placeholder="Nombre de usuario" id="username" required autocomplete="off">
-            <i class="fa-regular fa-user"></i>
-            </div>
-            <br>
-            <div class="formato4">
-                <label for="file-input">Imagen de perfil</label>&nbsp;
-                <i class="fa-solid fa-camera-retro"></i>
-            </div>
-            <div class="formato4">
-            <input type="file" id="file-input" name="archivo" required>
-              </div>
-            <br>
-            <div class="formato3">
-            <input type="text" name="firstName" placeholder="Nombre" id="name" required="true" autocomplete="off">
-            <i class="fa-solid fa-signature"></i>
-            </div>
-            <div class="formato3">
-            <input type="text" name="lastName" placeholder="Apellido" id="lastName" required autocomplete="off">
-            <i class="fa-solid fa-signature"></i>
-            </div>
-            <br>
-            <label style="color: red" id="NotValidEmail">Correo no tiene un formato correcto</label>
-            <br>
-            <div class="formato3">
-            <input type="email" name="email" placeholder="Correo electrónico" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-            <i class="fa-regular fa-envelope"></i>
-            </div>
-            <br>
-            <div class="formato4">
-            <label>Fecha de nacimiento</label>&nbsp;
-            <i class="fa-regular fa-calendar"></i>
-        </div>
-        <div class="formato4">
-            <input type="date" id="birthdate" name="birthdate" value="2022-10-17" min="1900-01-01" max="2022-10-17">
-        </div>
-            <br>
-            <br>
-            
-            <div class="formato3">
-            <input type="password" name="password" placeholder="Contraseña nueva" id="password" pattern="(?=.*[!#$%&'()*+,-./])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required autocomplete="off">
-            <i class="fa-solid fa-key"></i>
-            </div>
+<div class="container-fluid">
+        <div class="row">  
+            <div class="col-12 col-sm-10 col-md-8 col-lg-5">
+                <div class="section">
+                    <fieldset>
+                        <form action="index.html" target="_self" method="post"  id="registerForm" enctype="multipart/form-data" >
+                            <h1>Ingresa tus datos</h1>
+                            <br>
+                            <div class="formato3">
+                                <input type="text" name="username" placeholder="Nombre de usuario" id="username" required autocomplete="off">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <br>
+                            <div class="formato4">
+                                <label>Subir imagen de perfil:</label> &nbsp;
+                                <label class="custom-file-upload" for="file-input">
+                                <i class="fa-solid fa-camera-retro"></i>
+                                </label>
+                                <input type="file" id="file-input" name="archivo" required>
+                            </div>
 
-            <div class="formato5" style="display: none;">
-            <p>La contraseña debe contener: </p>
-            <ul >
-                <li id="pLength" class="notValid">Al menos 8 caracteres</li>
-                <li id="pCap" class="notValid">Al menos una mayúscula</li>
-                <li id="pLower" class="notValid">Al menos una minúscula</li>
-                <li id="pNumber" class="notValid">Al menos un numero</li>
-                <li id="pSign" class="notValid">Al menos un signo de puntuación</li>
-            </ul>
-        </div>
-            
-            <br>
-            <label style="color: red" id="NotValidPass">Las contraseñas no coinciden</label>
-            <br>
-            <div class="formato3">
-                <input type="password" placeholder="Confirmar contraseña" id="confirmPassword" required autocomplete="off">
+                            <br>
+                            <div class="formato3">
+                                <input type="text" name="firstName" placeholder="Nombre" id="name" required autocomplete="off">
+                                <i class="fa-solid fa-signature"></i>
+                            </div>
+                            <div class="formato3">
+                                <input type="text" name="lastName" placeholder="Apellido" id="lastName" required autocomplete="off">
+                                <i class="fa-solid fa-signature"></i>
+                            </div>
+                            <br>
+                            <label style="color: red" id="NotValidEmail">Correo no tiene un formato correcto</label>
+                            <br>
+                            <div class="formato3">
+                                <input type="email" name="email" placeholder="Correo electrónico" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <br>
+                            <div class="formato4">
+                                <label>Fecha de nacimiento</label>&nbsp;
+                                <i class="fa-regular fa-calendar"></i>
+                            </div>
+                            <div class="formato4">
+                                <input type="date" id="birthdate" name="birthdate" value="2022-10-17" min="1900-01-01" max="2022-10-17">
+                            </div>
+                            <br>
+                            <br>
+                            <div class="formato3">
+                                <input type="password" name="password" placeholder="Contraseña nueva" id="password" pattern="(?=.*[!#$%&'()*+,-./])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required autocomplete="off">
+                                <i class="fa-solid fa-key"></i>
+                            </div>
+                            <div class="formato5" style="display: none;">
+                                <p>La contraseña debe contener: </p>
+                                <ul >
+                                    <li id="pLength" class="notValid">Al menos 8 caracteres</li>
+                                    <li id="pCap" class="notValid">Al menos una mayúscula</li>
+                                    <li id="pLower" class="notValid">Al menos una minúscula</li>
+                                    <li id="pNumber" class="notValid">Al menos un numero</li>
+                                    <li id="pSign" class="notValid">Al menos un signo de puntuación</li>
+                                </ul>
+                            </div>
+                            <br>
+                            <label style="color: red" id="NotValidPass">Las contraseñas no coinciden</label>
+                            <br>
+                            <div class="formato3">
+                                <input type="password" placeholder="Confirmar contraseña" id="confirmPassword" required autocomplete="off">
+                                </div>
+                                <br>
+                            <div class="formato6">
+                                <input type="submit" value="Registrate">
+                            </div>
+                            <br>
+                            <br>
+                        </form>
+                    </fieldset>
                 </div>
-                <br>
-            <div class="formato6">
-            <input type="submit" value="Registrate">
             </div>
+        </div>
+</div>
+    
+<footer>
+    <div id="foot1">
+        <p>
+            Angel Emmanuel Barbosa Silos | Valeria Elisa Valadez Cerda
+        </p>
+    </div>
+
+    <div id="foot2">
+        <p>
+            Angel Emmanuel Barbosa Silos
             <br>
-            <br>
-        </form>
-    </fieldset>
-</section>
-                    </div>
-             </div>
-             </div>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="register.js"></script>
+            &nbsp;&nbsp;&nbsp;Valeria Elisa Valadez Cerda
+        </p>
+    </div>
+</footer>
+    
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="register.js"></script>
 </body>
 </html>

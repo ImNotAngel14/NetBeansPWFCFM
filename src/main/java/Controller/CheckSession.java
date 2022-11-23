@@ -76,9 +76,11 @@ public class CheckSession extends HttpServlet {
             result.put("user", user);
             
             result.put("Response", true);
+            System.out.println("prefoto");
             result.put("photo", base64(user.getPhoto()));
+            System.out.println("foto");
             //result.put("username", user.getUsername());
-        }
+        }  
         else
         {            
             result.put("Response", false);

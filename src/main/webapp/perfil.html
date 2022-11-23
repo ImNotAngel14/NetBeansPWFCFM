@@ -1,55 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
 <head>
-    <link rel="icon" href="Img/gatitoo.png" type="icon_path">
+    <link rel="icon" href="Img/gatitoo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="perfil.css">
+    <script src="https://kit.fontawesome.com/eae19df9c9.js" crossorigin="anonymous"></script>
     <title>Perfil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
-<body style="background-color: #e5f5f7">
-    <div class="container">
-    <header>
-        <div class="inner">
-            <div class="logo">
-                <div>
-                    <a href="home.html">
-                        <button class="Home">
-                        <img src="Img/GatitoBlog.png" alt="Logo">
-                    </button>
-                    </a>
-                </div>
-            </div>
-            <div class="logo">
-                <div id="BarraNav">
-                    <span >
-                        <input type="text" placeholder="Buscar...">
-                        <img src="Img/Lupa.png">
-                    </span>
-                </div>
-            </div>
-            <nav>
-                <li><span id="navbarUsername"> Nombre Usuario </span></li>
-                <li><a href="perfil.html"><button class="Home"><img src="Img/FP.png" id="FPHeader" style="height:50px;width:50px"></button></a></li>
-                
-            </nav>
-        </div>
+    </head>
+    <body>
+        <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light" id="BarraNavegacion">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home.html"  id="LogoM"> 
+        <button id="imgM">
+                        <img src="Img/GatitoBlog.png" alt="Logo" style="height: 50px">
+                    </button> </a>
+    <a class="navbar-brand" href="home.html"  id="LogoS">
+        <button id="imgS">
+                        <img src="Img/Logo.png" alt="Logo" style="height: 50px">
+        </button> </a>
+   
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      
+    <!--<a class="navbar-brand" href="#">Navbar</a>-->
+
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" id="InputBuscar">
+        
+        <button class="btn btn-outline-success" type="submit">Ir</button>
+      </form>
+    </div>
+    
+    <ul class="navbar-nav" id="DataUser1">
+    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="Perfil"><img src="Img/FP.png" id="FPHeader" style="height:50px;width:50px"></button>
+            &nbsp;
+            <span id="UserName"> Usuario </span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" data-bs-popper="none" id="Columna">
+            <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+    </ul>    
+
+  </div>
+</nav>
     </header>
-    <div class="container-fluid">
+        
+            <div class="container-fluid">
         <div class="row" id="Contenido">
-            <div class="col-1"></div>
-            <div class="col-3">
+            <div class="col-lg-1"></div>
+            <div class="col-12 col-lg-3 col-md-4">
                 <!--Placement del Perfil-->
                 <div id="Perfil">
                     <!--Placement del cada elemento-->
                     <div id="ElemPer">
-                        
-                        <div id="Portada"></div>
                         <div id="ImgUpload">
                             <label for="file-input">
-                            <img id="FP"src="Img/FP.png" height="100px" width="100px">
+                            <img src="Img/FP.png" id="FP" alt="">
                         </label>
                             <input id="file-input" type="file">
 
@@ -59,51 +81,104 @@
                             <h2 id="username">Nombre Usuario</h2>
                         </div>
                     </div>
-                                                <a href="Publicacion.html">
-                        <button class="PubRec">
-                        Publicaciones Recientes
+
+                    <a href="Publicacion.html">
+                    <button class="PubRec">
+                    Publicaciones Recientes
                     </button>
                     </a>
+                    <br>
+                    <br>
+                    <a href="CrearPubli.html">
+                    <button class="PubRec">
+                    Crear Nueva Publicación
+                    </button>
+                    </a>
+                    <br><!-- comment -->
+                    <br>
                 
             </div>
             </div>
             <div class="col-1"></div>
-            <div class="col-6">
+            <br>
+            <div class="col-12 col-lg-6 col-md-7">
             <div id="Grpo">
             <div class="InfoUser">
+                <div class="float-start">
+                <H2>Datos del Usuario:</H2>
+                </div>
+                <div class="float-end">
+                <div class="btn-group">
+                <button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" aria-expanded="false" id="Edit">
+                  <img id = "icono" src="Img/Edit.png">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Editar Foto</a></li>
+                  <li><a class="dropdown-item" href="#">Editar Nombre</a></li>
+                  <li><a class="dropdown-item" href="#">Editar Fecha Nacimiento</a></li>
+                  <li><a class="dropdown-item" href="#">Editar e-mail</a></li>
+                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#EditPswModal" id="EditPsw">Editar Contraseña</a></li>
+                </ul>
+                </div>
                 <br>
-                <H2>Información de Usuario:</H2>
-                <br>
+                </div>
             </div>
-
+                <!-- MODAL PSWRD -->
+                <div class="modal fade" id="EditPswModal" tabindex="-1" aria-labelledby="EditPsw" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Contraseña</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="password" name="password" placeholder="Contraseña nueva" id="password" pattern="(?=.*[!#$%&'()*+,-./])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required autocomplete="off">
+                                <input type="password" placeholder="Confirmar contraseña" id="confirmPassword" required autocomplete="off">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="Cancel" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="Okay">Aceptar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MODAL PSWRD -->
+                
             <div class="datosP">
                 <br>
                 <br>
                 <span class="Desc">Nombre: &nbsp;</span> <span class="DatoU" id="fullname">Nombre ApellidoP ApellidoM</span> 
-                <button id="Edit"><img id = "icono" src="Img/Edit.png"></button>
                 <br>
                 <br>
                 <span class="Desc">Email:&nbsp;</span> <span class="DatoU" id="email">email@email.com</span> 
-                <button id="Edit"><img id = "icono" src="Img/Edit.png"></button>
                 <br>
                 <br>
                 <span class="Desc">Edad:&nbsp;</span><span class="DatoU" id="age"> 00 Años</span>
-                <button id="Edit"><img id = "icono" src="Img/Edit.png"></button>
             </div>
         </div>
         </div>
         <div class="col-1"></div>
     </div>
+    </div>
 
-    <footer class="fixed-bottom">
-        <div>
-            <p>
-               Valeria Elisa Valadez Cerda | Angel Emmanuel Barbosa Silos
-            </p>
-        </div>
-    </footer>
-        </div>
+    <footer>
+    <div id="foot1">
+        <p>
+            Angel Emmanuel Barbosa Silos | Valeria Elisa Valadez Cerda
+        </p>
+    </div>
+
+    <div id="foot2">
+        <p>
+            Angel Emmanuel Barbosa Silos
+            <br>
+            &nbsp;&nbsp;&nbsp;Valeria Elisa Valadez Cerda
+        </p>
+    </div>
+    </footer>    
+        
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="perfil.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    </body>
 </html>

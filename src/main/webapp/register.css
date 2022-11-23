@@ -1,6 +1,10 @@
-
-
-
+body { 
+  background: radial-gradient(circle at 100% 0%, #73fee9 0, #69e8de 16.67%, #62cecd 33.33%, #5db2b6 50%, #59969d 66.67%, #557f87 83.33%, #516b72 100%) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 h1{
     display: flex;
@@ -11,7 +15,19 @@ h1{
     text-shadow: 3px 3px 3px rgb(49, 90, 109);
 }
 
-section{
+.row{
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    padding-top: 30px;
+}
+
+.col-12 col-sm-10 col-md-8 col-lg-6{
+    margin:0px auto;
+}
+
+.section{
+margin:0px auto;
 background-color: rgba(232, 253, 250, 0.555);
 border-radius: 15px;
 }
@@ -37,6 +53,23 @@ label{
     margin-left: 20%;
     margin-right: 20%;
 }
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: rgba(74, 191, 197,0.5);
+    border-radius: 5px;
+}
+
+.custom-file-upload:hover {
+        filter: brightness(3.0);
+}
+
 .formato5{
     margin-left: 20%;
     margin-right: 20%;
@@ -76,4 +109,31 @@ select{
 
 .valid{
     color:rgb(23, 197, 7);
+}
+
+footer{
+    
+    height: 150px;
+
+    display: flex;
+    place-content: center;
+
+    align-items:flex-end;
+    color:#63616ba8;
+    padding-bottom: 20px;
+    
+}
+
+
+
+@media(max-width: 425px){
+#foot1{
+    display: none;
+}
+}
+
+@media(min-width: 426px){
+#foot2{
+    display: none;
+}
 }
