@@ -33,43 +33,38 @@ public class Post {
     private boolean spoiler;
     private int postId;
     private int userId;
-    private String title;
     private String postText;
     private String base64PostImage;
     private InputStream postImage;
     private Timestamp uploadDate;
     //public User author;
     private String username;
-    private String base64ProfileImage;
-    private InputStream profileImage;
     
     //Get post
     public Post(int postId, int userId, String title, String postText, InputStream postImage, boolean spoiler, Timestamp uploadDate, String username, InputStream userPhoto)
     {
         this.postId = postId;
         this.userId = userId;
-        this.title = title;
         this.postText = postText;
         this.postImage = postImage;
         this.spoiler = spoiler;
         this.uploadDate = uploadDate;
         this.username = username;
-        this.profileImage = userPhoto;
+
         //this.base64postImage = base64(postImage);
     }
     
     //Get post REAL
-    public Post(int postId, int userId, String title, String postText, String postImage, boolean spoiler, Timestamp uploadDate, String username, String userPhoto)
+    public Post(int postId, int userId, String postText, String postImage, boolean spoiler, Timestamp uploadDate, String username)
     {
         this.postId = postId;
         this.userId = userId;
-        this.title = title;
         this.postText = postText;
         this.base64PostImage = postImage;
         this.spoiler = spoiler;
         this.uploadDate = uploadDate;
         this.username = username;
-        this.base64ProfileImage = userPhoto;
+
         //this.base64postImage = base64(postImage);
     }
     
@@ -95,9 +90,6 @@ public class Post {
         return userId;
     }
 
-    public String getTitle() {
-        return title;
-    }
 
     public String getPostText() {
         return postText;

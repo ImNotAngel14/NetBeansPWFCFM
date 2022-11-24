@@ -99,6 +99,9 @@ public class UserDAO {
         {
             connection = dbConnection.getmysqlConnection();
             ps = connection.prepareStatement(sql);
+            
+            
+            
             ps.setString(1, newUser.getUsername());
             ps.setString(2, newUser.getPassword());
             ps.setString(3, newUser.getFirstName());

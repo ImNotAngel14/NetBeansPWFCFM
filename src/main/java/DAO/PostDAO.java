@@ -31,6 +31,39 @@ public class PostDAO {
     Post post = null;
     User user = null;
     
+    public ArrayList<Post> getPosts()
+    {
+        ArrayList<Post> list = new ArrayList();
+        String store = "CALL gatito_blog.getActivePosts();";
+        try
+        {
+            connection = dbConnection.getmysqlConnection();
+            cs = connection.prepareCall(store);
+            rs = cs.executeQuery();
+            while(rs.next())
+            {
+                //int postId, int userId, String postText, String postImage, boolean spoiler, Timestamp uploadDate, String username
+                String postImage = base64(rs.getBinaryStream("postImage"));
+                Post tempPost = new Post(
+                        rs.getInt("postId"),
+                        rs.getInt("userId"),
+                        rs.getString("postText"),
+                        postImage,
+                        rs.getBoolean("isSpoiler"),
+                        rs.getTimestamp("uploadDate"),
+                        rs.getString("username")
+                );
+                list.add(tempPost);
+            }
+        } catch(Exception ex)
+        {
+            System.out.println(ex);
+        }finally{
+            closeConnection();
+        }
+        return list;
+    }
+    
     public List getPostsByUser(int userId)
     {
         ArrayList<Post> list = new ArrayList();
@@ -44,17 +77,14 @@ public class PostDAO {
             while(rs.next())
             {
                 String post = base64(rs.getBinaryStream("postImage"));
-                String profileImage = base64(rs.getBinaryStream("profileImage"));
                 Post tempPost = new Post(
                         rs.getInt("postId"),
                         rs.getInt("userID"),
-                        rs.getString("title"),
                         rs.getString("postText"),
                         post,
                         rs.getBoolean("isSpoiler"),
                         rs.getTimestamp("uploadDate"),
-                        rs.getString("username"),
-                        profileImage
+                        rs.getString("username")
                 );
                 list.add(tempPost);
             }
@@ -70,31 +100,9 @@ public class PostDAO {
     
     public boolean insertPost(Post newPost)
     {
-        
-        
         //INSERT INTO gatito_blog.posts(userId, title, postText, postImage, isSpoiler) VALUES(?, ?, ?, ?, ?, ?);
         try
         {
-//            boolean hasImage = false;
-//            boolean hasText = false;
-//            String sql = "INSERT INTO gatito_blog.users(userId, ";
-//            String text = newPost.getPostText();
-//            InputStream image = newPost.getPostImage();
-//            if(text.length() >  0)
-//            {
-//                hasText = true;
-//                sql+="postText, ";
-//            }
-//            if(image != null)
-//            {
-//                hasImage = true;
-//                sql+="postImage, ";
-//            }
-//            if(hasText)
-//            {
-//                
-//            }
-//            sql += "isSpoiler) VALUES(?,?";
             String sql = "INSERT INTO gatito_blog.posts(userId, postText, postImage, isSpoiler) VALUES(?, ?, ?, ?);";
             connection = dbConnection.getmysqlConnection();
             ps = connection.prepareStatement(sql);
@@ -116,6 +124,9 @@ public class PostDAO {
         {
             System.out.println("Error " + ex);
             return false;
+        }
+        finally{
+            closeConnection();
         }
     }
     
