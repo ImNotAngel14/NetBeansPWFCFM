@@ -58,11 +58,11 @@
     </header>
     
      <div class="container-fluid">
-         <div class="row" id="ContenidoA">
-            <div class="col-2" id="espacio"></div>
+         <div class="row ContenidoA">
+            <div class="col-2"></div>
             
             <div class="col-12 col-md-8">
-                <div id="DashBoard">
+                <div class="DashBoard">
                 <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
                 <label class="btn btn-primary" for="option1">Más Recientes</label>
 
@@ -75,88 +75,115 @@
             </div>
             </div>
              
-            <div class="col-2" id="espacio"></div> 
+            <div class="col-2"></div> 
          </div>
-        <div class="row" id="ContenidoB">
+        <div class="row ContenidoB">
 
-            <div class="col-2" id="espacio">
+            <div class="col-2">
             </div>
             
-            <div class="col-12 col-md-8">
-                
-                                <div id="Publicaciones">
-                <div id="Reaccion">
+            <div class="col-12 col-md-8 Publicaciones">
+              <div class="Cpadding">
+               <div class="PubliIndiv">
+                <div class="Reaccion">
                     <div>
                         <div>
-                        <button class="reactB">
-                            <img src="Img/VotoUp.png" id="reactI" alt="">
-                        </button>
+                            <button class="reactB">
+                                <img src="Img/VotoUp.png" alt="">
+                            </button>
                         </div>
-                        
                         <div>
-                        <span id="contador">&nbsp;&nbsp;&nbsp;&nbsp;0</span>
-                        </div>
-                        
-                        <div> 
-                        <button class="reactB">
-                            <img src="Img/VotoDown.png" id="reactI" alt="">
-                        </button>   
+                            <span class="contador">&nbsp;&nbsp;&nbsp;&nbsp;0</span>
                         </div>
                     </div>
                 </div>      
                     <div class="Publi">
                         <div class ="PubliData">
-                            <span class="UserP" id="UserPubli">NombreUsuario</span> 
+                            <span class="UserP">NombreUsuario</span> 
                             <span class="FechaP">20/10/2022</span>
                         </div>
                         <div class="DescriP">
-                            <p id="TextPubli">
+                            <p>
                                 Texto de la Publicación
                             </p>
                             <br>
-                            <img id="pngP" src="Img/pngP.png">
+                            <img class="pngP" src="Img/pngP.png">
                         </div>
-                        <br>
-
-
-                        <br>
+                        <br><br>
                         <div class="FuncP">
-                            <div class="float-start">
-                                <button class="Fbtn" onclick="showComents()">
-                                <img src="Img/Coment.png" id="icono">
+                        <div class="float-start">
+                            <button class="Fbtn" onclick="showComents()">
+                                <img src="Img/Coment.png" class="icono">
                                 0
-                            </button>
-                            &nbsp;
-                            </div>               
-                                
+                            </button>&nbsp;
+                        </div>               
                         </div>
-                        <br>
-                        <div></div>
-                        <br>
-                        <br>
+                        <br><br><br>
                         <div class="Comentario" style="display: none;">
                             <br>
                             <p>Escribe tu comentario:</p>
-                            
-                            <input type="text" id="InputComent" placeholder="¿Qué estás pensando?...">
-                            <br>
-                            <br>
-                            <button id="BtnComent">Publicar</button>
-
+                            <input type="text" class="InputComent" placeholder="¿Qué estás pensando?...">
+                            <br><br>
+                            <button class="BtnComent">Publicar</button>
                         </div>
                     </div>
                 </div>
-                
-                
+            </div>
+                <!---->
+                               <div class="PubliIndiv">
+                <div class="Reaccion">
+                    <div>
+                        <div>
+                            <button class="reactB">
+                                <img src="Img/VotoUp.png" alt="">
+                            </button>
+                        </div>
+                        <div>
+                            <span class="contador">&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+                        </div>
+                    </div>
+                </div>      
+                    <div class="Publi">
+                        <div class ="PubliData">
+                            <span class="UserP">NombreUsuario</span> 
+                            <span class="FechaP">20/10/2022</span>
+                        </div>
+                        <div class="DescriP">
+                            <p>
+                                Texto de la Publicación
+                            </p>
+                            <br>
+                            <img class="pngP" src="Img/pngP.png">
+                        </div>
+                        <br><br>
+                        <div class="FuncP">
+                        <div class="float-start">
+                            <button class="Fbtn" onclick="showComents()">
+                                <img src="Img/Coment.png" class="icono">
+                                0
+                            </button>&nbsp;
+                        </div>               
+                        </div>
+                        <br><br><br>
+                        <div class="Comentario" style="display: none;">
+                            <br>
+                            <p>Escribe tu comentario:</p>
+                            <input type="text" class="InputComent" placeholder="¿Qué estás pensando?...">
+                            <br><br>
+                            <button class="BtnComent">Publicar</button>
+                        </div>
+                    </div>
+                </div>
+                <!---->
             </div>
             
                 
-            <div class="col-2" id="espacio">
+            <div class="col-2">
             </div>
             
         </div>
             
-            <div id="Paginacion">
+            <div class="Paginacion">
                     <nav>
               <ul class="pagination justify-content-center">
                 <li class="page-item">
@@ -177,13 +204,13 @@
             </div>
             
     <footer>
-    <div id="foot1">
+    <div class="foot1">
         <p>
             Angel Emmanuel Barbosa Silos | Valeria Elisa Valadez Cerda
         </p>
     </div>
 
-    <div id="foot2">
+    <div class="foot2">
         <p>
             Angel Emmanuel Barbosa Silos
             <br>

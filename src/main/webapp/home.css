@@ -57,29 +57,32 @@ header{
 /* 
 HEADER^
 */
-#ContenidoA{
+.ContenidoA{
     padding-top: 100px;
     text-align: center;
 }
 
-#ContenidoB{
+.ContenidoB{
     padding-top: 20px;
 }
 
-#DashBoard{
+.DashBoard{
     border-radius: 5px;
     background-color:#e7e1fd;
     padding: 10px 14px;
 }
+.Cpadding{
+    padding-bottom: 20px;
+}
 
-#Publicaciones{
+.PubliIndiv{
     padding: 10px 14px;
     border-radius: 5px;
 
     background-color: #8bbddb;
 }
 
-#Reaccion{
+.Reaccion{
     align-items:center;
     box-sizing: border-box;
     display: flex;
@@ -92,14 +95,15 @@ HEADER^
     border: none;
     cursor: pointer;
 }
-#reactI{
-    width: 30px;
-    height: 30px;
-    border: none;
-}
 
 .reactB:hover{
     filter: brightness(3.3);
+}
+
+.reactB img{
+    width: 30px;
+    height: 30px;
+    border: none;
 }
 
 .Publi{
@@ -117,20 +121,20 @@ padding-right: 40px;
     color: rgba(0, 0, 0, 0.514);
 }
 
-#pngP{
+.pngP{
     width:80%;
     height: 60%;
 }
 
 @media(max-width: 426px){
-#pngP{
+.pngP{
     height: 100%;
     width: 100%;
 }
 }
 
 @media(min-width: 1200px){
-#pngP{
+.pngP{
     height: 40%;
     width: 60%;
 }
@@ -154,19 +158,8 @@ padding-right: 40px;
     color: black;
 }
 
-@media(min-width: 425px){
-#BtnMobile{
-    display: none;
-}
-}
 
-@media(max-width: 424px){
-#BtnNormal{
-    display: none;
-}
-}
-
-#icono{
+.icono{
     background-color: #10101000;
     height: 30px;
     width: 30px;
@@ -176,7 +169,7 @@ padding-right: 40px;
     border-top: 1px solid rgba(119, 136, 153, 0.548);
 }
 
-#InputComent{
+.InputComent{
     height: 90px;
     width: 100%;
     border:none;
@@ -185,7 +178,7 @@ padding-right: 40px;
 
 }
 
-#BtnComent {
+.BtnComent {
     border: none;
     background-color: rgba(255, 255, 255, 0.61);
     padding: 8px;
@@ -195,13 +188,13 @@ padding-right: 40px;
     transition: background-color .5s;
     box-sizing: content-box;
 }
-#BtnComent:hover{
+.BtnComent:hover{
     background-color: rgba(255, 255, 255, 0.877);
     box-shadow: 3px 3px 3px rgba(43, 153, 226, 0.61);
     color: black;
 }
 
-#Paginacion{
+.Paginacion{
     padding-top: 20px;
 }
 
@@ -221,13 +214,13 @@ footer{
 
 
 @media(max-width: 425px){
-#foot1{
+.foot1{
     display: none;
 }
 }
 
 @media(min-width: 426px){
-#foot2{
+.foot2{
     display: none;
 }
 }
